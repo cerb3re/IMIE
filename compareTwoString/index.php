@@ -12,9 +12,8 @@ function compareTwoString(string $s, string $r): bool {
 
     while ($i < strlen($s)) {
         while ($j < strlen($r)) {
-            if ($s[$i + $j] == $r[$j]) {
+            if ($s[$i + $j] == $r[$j])
                 $k++;
-            }
             $j++;
         }
         $i++;
@@ -28,8 +27,7 @@ function compareTwoString(string $s, string $r): bool {
 $s = "salut test de test";
 $r = "salut t";
 
-if (compareTwoString($s, $r))
-{
+if (compareTwoString($s, $r)) {
     echo 'ok';
 } else {
     echo 'ko';
