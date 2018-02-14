@@ -5,7 +5,7 @@
  * Compare two string and 
  * return true or false if thoses matches.
  */
-function compareTwoString(string $s, string $r): string {
+function compareTwoString(string $s, string $r): bool {
     $i = 0;
     $j = 0;
     $k = 0;
@@ -21,9 +21,16 @@ function compareTwoString(string $s, string $r): string {
     }
 
     if ($k == strlen($r))
-        return ('true');
-    return ('false');
+        return (true);
+    return (false);
+    
 }
 $s = "salut test de test";
 $r = "salut t";
-echo compareTwoString($s, $r);
+
+if (compareTwoString($s, $r))
+{
+    echo 'ok';
+} else {
+    echo 'ko';
+}
