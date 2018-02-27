@@ -7,9 +7,9 @@
  */
 
 function triangleVide(int $nb) {
-    for ($i = 0; $i <= $nb; $i++) {
-        for ($j = 0; $j <= $i; $j++) {
-            if ($j == 0 || $j == $i || $i == $nb)
+    for ($i = 1; $i <= $nb; $i++) {
+        for ($j = 1; $j <= $i; $j++) {
+            if ($j == 1 || $j == $i || $i == $nb)
                 echo "*";
             else 
                 echo "0";
