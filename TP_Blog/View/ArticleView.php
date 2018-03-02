@@ -2,7 +2,7 @@
          <form action="index.php" method="get">
             <div class="input-group col-md-12">
                 <input type="hidden" name="action" value="Article"/>
-                <input type="text" name="search" class="form-control" placeholder="rechercher" value="rechercher un article"/>
+                <input type="text" name="search" class="form-control" placeholder="recherche par titre" value=""/>
                 <span class="input-group-btn">
                     <button class="btn btn-secondary" type="submit">
                         <i class="glyphicon glyphicon-search"></i>

@@ -18,8 +18,8 @@ class EntityArticle {
 
     public static function getArticleBySearch($str) {
         $pdo = \DAO\BDD\bdd::getConnexion();
-        $stmt = $pdo->prepare("SELECT * FROM article WHERE article.contenu LIKE :str");
-        $stmt->execute(array(':str' => '%' .$str . '%'));
+        $stmt = $pdo->prepare("SELECT * FROM article WHERE article.titre LIKE :str");
+        $stmt->execute(array('str' => '%'. $str.'%'));
 
         $pls = $stmt->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, \Blog\Model\Article\Article::class);
 

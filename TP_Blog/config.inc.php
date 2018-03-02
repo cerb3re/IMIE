@@ -5,3 +5,4 @@ define('SQL_PASSWORD', '');
 define('UPLOAD_DIR', 'assets/img/pl_heads/');
 //List of all views that are allowed to be displayed anonymously
 define('PATH_VIEW',dirname(__FILE__).'/view');
+$DMZ = ['','Welcome', 'LoginForm', 'LoginFormHandler'];

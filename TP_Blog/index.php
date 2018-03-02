@@ -25,7 +25,6 @@ if ($action){
         return;
     }
 }
-$DMZ = ['','Welcome', 'LoginForm', 'LoginFormHandler'];
 session_start();
 if (!in_array($controler, $DMZ) && !isset($_SESSION['user_id'])){
     header("Location: /index.php?action=LoginForm");
