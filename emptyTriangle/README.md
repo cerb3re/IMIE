@@ -1,7 +1,7 @@
-## Empty Triangle
+# Empty Triangle
 
-# This function print an empty triangle with "*" at his border and "0" inside.
-# Made in PhP and C
+## This function print an empty triangle with "*" at his border and "0" inside.
+## Made in PhP and C
 
-# By
-T.CHENIER - IMIE 2018
+## By
+`T.CHENIER - IMIE 2018`
