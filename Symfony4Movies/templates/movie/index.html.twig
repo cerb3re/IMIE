@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ path('movies')|replace({'/':''})|upper }}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="list_item odd">
+        <div class="article listo nm">
+            <h1 class="header">
+                <a href="/movies-in-theaters/?ref_=inth_inth" class="newmovies">New Movies</a><br>
+                In Theaters</h1>
+
+            <ul class="list_tabs">
+                <li class="active"><a>In Theaters</a></li>
+                <li><a href="/movies-coming-soon/?ref_=inth_cs">Coming Soon</a></li>
+
+                <li class="linkright"><a href="/showtimes/location?ref_=inth_sh">Showtimes</a> <span>»</span></li>
+            </ul>
+            <div class="header">&nbsp;</div>
+            <!-- MOVIE FOR EACH -->
+            {% for mv in movie %}
+
+
+            <div class="list detail sub-list">
+                <div class="list_item odd" itemscope="" itemtype="http://schema.org/Movie">
+                    <table cellspacing="0" cellpadding="0" border="0" class="nm-title-overview-widget-layout">
+                        <tbody>
+                        <tr>
+                            <td rowspan="2" valign="top" id="img_primary">
+                                <div class="image">
+                                    <a href="{{ path('movie_about', {'offset':mv.id}) }}">
+                                        <div class="hover-over-image zero-z-index">
+                                            <img src="{{ asset('img/posters/' ~ mv.image ) }}" style="border-radius: 0% 8% 8% 0%;">
+                                        </div>
+                                    </a></div>
+                            </td>
+                            <td class="overview-top">
+                                <h4 itemprop="name"><a href="/title/tt6772950/?ref_=inth_ov_tt"
+                                                       title="Action ou vérité (2018)"
+                                                       itemprop="url"> {{ mv.title|upper }} ({{ mv.year }})</a></h4>
+                                <p class="cert-runtime-genre">
+
+                                    <img title="{{ mv.runtime }}" class="absmiddle"
+                                         src="https://images-na.ssl-images-amazon.com/images/G/01/imdb/images/certificates/us/pg_13-2767653680._CB499559026_.png">
+                                    <time itemprop="duration" datetime="PT100M">{{ mv.runtime }} mn</time>
+                                    &nbsp;&nbsp;-&nbsp;&nbsp;
+                                    <span itemprop="genre">{{ mv.genres }}</span>
+                                </p>
+                                <div class="rating_txt">
+                                </div>
+                                <div class="outline" itemprop="description">
+                                    {{ mv.plot }}
+                                </div>
+                                <div class="txt-block">
+                                    <h5 class="inline">Director:</h5>
+                                    <span itemprop="director" itemscope="" itemtype="http://schema.org/Person">
+                                <span itemprop="name">
+<a href="/name/nm0905592/?ref_=inth_ov_nm" itemprop="url">{{ mv.directors }}</a>
+                                </span>
+                            </span>
+
+                                </div>
+                                {% for star in mv.actors|split(' / ') %}
+                                    <div class="txt-block">
+                                        <h5 class="inline">Stars:</h5>
+                                        <span itemprop="actors" itemscope="" itemtype="http://schema.org/Person"><span
+                                                    itemprop="name">{{ star }}</span></span>
+                                    </div>
+                                {% endfor %}
+                                <a href="https://www.imdb.com/title/{{ mv.trailerId }}/?ref_=inth_ov_tt"><span class="btn btn-success" style="border-radius: 0% 8% 8% 0%">IMDB LINK</span></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class=" see-more">
+                    <div class="outline keyword">
+                        <br>
+                        <p>IMDb is your definitive source for discovering the latest new movies now playing in theaters.
+                            Find out what movies are opening this week as well as what movies are in the Box Office Top
+                            Ten.
+                            Before you go to the movie theater, go to IMDb to watch the hottest trailers,
+                            see photos, find release dates, read reviews, and learn all about the full cast and crew.
+                            IMDb
+                            is your ultimate source for all new movies, and our "In Theaters" page provides you an easy
+                            way
+                            to decide what to watch today, tomorrow or this weekend. As you find new movies, add them to
+                            your
+                            Watchlist. The IMDb Watchlist is a quick and easy way to track and remember all the latest
+                            movies
+                            that you want to see. Remember, IMDb is your source for new movies.</p><br>
+                    </div>
+                    <a href="/showtimes/location?ref_=inth_ov_sh_sm">See all movies in theaters</a> »
+                    <div class="alignright">
+                        <a href="/movies-coming-soon/?ref_=inth_ov_cs_sm">See movies opening next week</a> »
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ about.title|upper  }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body
+        {
+            background-image: url('{{ asset('img/posters/' ~ about.image) }}');
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 80%;
+            background-size: cover;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+
+    <div class="container content">
+        <tr>
+            <td class="overview-bottom">
+        <span class="wlb_wrapper">
+                                 <iframe class="btn btn-success" width="560" height="315"
+                                         src="https://www.youtube.com/embed/{{ about.trailerId }}"
+                                         frameborder="0" encrypted-media" allowfullscreen></iframe>
+
+            <a class="wlb_watchlist_lite btn2_wrapper btn2_active wlb_lite"
+               data-tconst="tt6772950"
+               data-size="small" data-caller-name="Title" data-initialized="1">
+                     <div class="btn2_alert" style="display:none"></div>
+                     </a>
+
+        </span>
+            </td>
+        </tr>
+    </div>
+{% endblock %}
