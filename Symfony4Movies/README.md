@@ -4,6 +4,7 @@
 This project print a movietech in symfony 4
 
 # Install
+- import ./SQL/*.sql file in your database
 - install composer then type in the movie directory:
 	composer install
 - open the .env file, then modify the database access addr.
